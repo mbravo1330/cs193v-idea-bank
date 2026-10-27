@@ -4,6 +4,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+[hidden] { display: none !important; }
+
 /* layout: a persistent search/filter toolbar sits above three interchangeable Explore screens — a
    carousel homepage (themed rows of cards, for cross-disciplinary discovery), a search/filter results
    grid, and a single-idea detail page — plus the unchanged Saved ideas page. Only two structural dividers
@@ -828,16 +830,10 @@ h2.idea-title {
 
 p.idea-meta { color: var(--text-soft); font-size: 0.9375rem; margin: 0; max-width: 74ch; }
 
-.idea-discipline-tag {
-  display: inline-flex;
-  align-items: center;
-  margin: 8px 0 0;
-  padding: 4px 12px;
-  border-radius: 999px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+p.idea-discipline-tag {
+  margin: 6px 0 0;
   color: var(--text);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 600;
 }
 
