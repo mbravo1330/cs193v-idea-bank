@@ -230,7 +230,8 @@ p.intro-note {
 
 .popover { position: relative; }
 
-#discipline-filter, #saved-preview, .stanford-field { width: 260px; }
+#discipline-filter, #saved-preview { width: 260px; }
+.stanford-field { width: 300px; }
 
 .popover summary {
   list-style: none;
@@ -1108,8 +1109,8 @@ textarea.copy-manual-text:focus-visible { outline: 2px solid var(--focus); outli
           <span class="field-label">&nbsp;</span>
           <div class="stanford-field">
             <input type="checkbox" id="stanford-filter">
-            <label for="stanford-filter">Stanford-affiliated research</label>
-            <button type="button" class="info-toggle" id="stanford-info-toggle" aria-expanded="false" aria-controls="stanford-explainer" aria-label="What does Stanford-affiliated research mean?">?</button>
+            <label for="stanford-filter">Stanford-affiliated work</label>
+            <button type="button" class="info-toggle" id="stanford-info-toggle" aria-expanded="false" aria-controls="stanford-explainer" aria-label="What does Stanford-affiliated work mean?">?</button>
           </div>
         </div>
 
@@ -1128,7 +1129,7 @@ textarea.copy-manual-text:focus-visible { outline: 2px solid var(--focus); outli
         </details>
       </div>
     </form>
-    <p id="stanford-explainer" hidden>"Stanford-affiliated research" means the idea's original authors are Stanford researchers, or Stanford researchers are actively continuing this line of work today.</p>
+    <p id="stanford-explainer" hidden>"Stanford-affiliated work" means the idea's original authors are Stanford researchers, or Stanford researchers are actively continuing this line of work today.</p>
 
     <div class="active-filters" id="active-filters" hidden></div>
     <p id="save-feedback" role="status" aria-live="polite"></p>
@@ -5141,10 +5142,10 @@ textarea.copy-manual-text:focus-visible { outline: 2px solid var(--focus); outli
       var sChip = document.createElement("span");
       sChip.className = "chip";
       var sText = document.createElement("span");
-      sText.textContent = "Stanford-affiliated research";
+      sText.textContent = "Stanford-affiliated work";
       var sBtn = document.createElement("button");
       sBtn.type = "button";
-      sBtn.setAttribute("aria-label", "Remove filter: Stanford-affiliated research");
+      sBtn.setAttribute("aria-label", "Remove filter: Stanford-affiliated work");
       sBtn.textContent = "×";
       sBtn.addEventListener("click", function () {
         state.stanfordOnly = false;
