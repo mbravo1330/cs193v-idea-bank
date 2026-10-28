@@ -1108,8 +1108,8 @@ textarea.copy-manual-text:focus-visible { outline: 2px solid var(--focus); outli
           <span class="field-label">&nbsp;</span>
           <div class="stanford-field">
             <input type="checkbox" id="stanford-filter">
-            <label for="stanford-filter">Stanford-linked only</label>
-            <button type="button" class="info-toggle" id="stanford-info-toggle" aria-expanded="false" aria-controls="stanford-explainer" aria-label="What does Stanford-linked mean?">?</button>
+            <label for="stanford-filter">Stanford-affiliated research</label>
+            <button type="button" class="info-toggle" id="stanford-info-toggle" aria-expanded="false" aria-controls="stanford-explainer" aria-label="What does Stanford-affiliated research mean?">?</button>
           </div>
         </div>
 
@@ -1128,7 +1128,7 @@ textarea.copy-manual-text:focus-visible { outline: 2px solid var(--focus); outli
         </details>
       </div>
     </form>
-    <p id="stanford-explainer" hidden>"Stanford-linked" means the idea's original authors are Stanford researchers, or Stanford researchers are actively continuing this line of work today.</p>
+    <p id="stanford-explainer" hidden>"Stanford-affiliated research" means the idea's original authors are Stanford researchers, or Stanford researchers are actively continuing this line of work today.</p>
 
     <div class="active-filters" id="active-filters" hidden></div>
     <p id="save-feedback" role="status" aria-live="polite"></p>
@@ -3670,6 +3670,137 @@ textarea.copy-manual-text:focus-visible { outline: 2px solid var(--focus); outli
       "AI"
     ],
     "cardHook": "Map how one shared model's flaw could ripple into everything built on it."
+  },
+  {
+    "id": "digital-twin-aircraft-structural-life",
+    "title": "Reengineering Aircraft Structural Life Prediction Using a Digital Twin",
+    "year": 2011,
+    "authors": "Eric J. Tuegel, Anthony R. Ingraffea, Thomas G. Eason, and S. Michael Spottswood",
+    "tags": [
+      "Aerospace & astronomy",
+      "Mechanical engineering & robotics"
+    ],
+    "discipline": "Aerospace & astronomy",
+    "origin": "Air Force Research Laboratory, with Cornell University; published in the International Journal of Aerospace Engineering",
+    "stanford": false,
+    "insight": "The paper proposes replacing today's one-size-fits-all approach to predicting how long an aircraft's structure will last with an ultra-high-fidelity model tied to one specific airframe by its tail number, a 'digital twin' combining a structural model with the actual flight loads, temperatures, and damage history that airframe has experienced, so its remaining life is estimated from what happened to it rather than from a fleet-wide average. The paper lays out the concept and the technical obstacles to building one; it is not a report of a working deployed system.",
+    "startSmall": "Pick one simplified structural component (like a beam) and a handful of fabricated 'flight log' readings over time, then build a toy model that estimates remaining life for that one component from its own history instead of a fleet average.",
+    "gist": "giving each individual aircraft its own life-prediction model instead of a fleet-wide average",
+    "link": "https://onlinelibrary.wiley.com/doi/10.1155/2011/154798",
+    "keywords": [
+      "digital twin",
+      "aerospace",
+      "structural health monitoring",
+      "predictive maintenance",
+      "fatigue analysis"
+    ],
+    "vibecodingIdeas": [
+      "Build a toy digital-twin dashboard where a simulated aircraft component accumulates synthetic stress events over a flight history, and the tool recalculates an estimated remaining-life number after each one.",
+      "Create a comparison view showing how a fleet-wide average life estimate diverges from an individual-history estimate as two simulated aircraft experience different synthetic flight conditions.",
+      "Build a sensor-replay tool where a user scrubs through a timeline of synthetic sensor readings and watches a simple damage-accumulation model update in response."
+    ],
+    "cardHook": "Give one aircraft its own life-prediction model, built from its own history."
+  },
+  {
+    "id": "digital-twin-virtual-factory-replication",
+    "title": "Digital Twin: Manufacturing Excellence through Virtual Factory Replication",
+    "year": 2014,
+    "authors": "Michael Grieves",
+    "tags": [
+      "Mechanical engineering & robotics",
+      "Business & organizations",
+      "Computer science, AI & graphics"
+    ],
+    "discipline": "Mechanical engineering & robotics",
+    "origin": "Michael Grieves, LLC; white paper widely credited with popularizing the term 'digital twin', building on a concept Grieves introduced in 2002 and that NASA's John Vickers later named",
+    "stanford": false,
+    "insight": "The white paper describes the digital twin as a virtual model that mirrors a physical product or factory across its entire lifecycle, linked by a continuous flow of data in both directions, so simulating the virtual copy can surface problems before they happen in the physical one. It's the paper most often credited with popularizing the term, not a case study reporting measured results from a deployment.",
+    "startSmall": "Build a toy digital twin of a single simulated machine, like a pump, where changing a synthetic input in the virtual model is paired with a matching synthetic sensor reading from a 'physical' stand-in, so the two sides visibly stay in sync.",
+    "gist": "keeping a virtual copy of a factory in sync with its physical twin, in both directions",
+    "link": "https://www.researchgate.net/publication/275211047_Digital_Twin_Manufacturing_Excellence_through_Virtual_Factory_Replication",
+    "keywords": [
+      "digital twin",
+      "manufacturing",
+      "product lifecycle management",
+      "simulation",
+      "Industry 4.0"
+    ],
+    "vibecodingIdeas": [
+      "Build a side-by-side physical-vs-virtual simulator where a user adjusts a dial on a simulated machine and watches a matching virtual model update in real time, then introduces a synthetic fault and sees it appear on both sides.",
+      "Create a factory-floor map where clicking a simulated machine pulls up its full synthetic history, from assembly to its current made-up wear level.",
+      "Build a 'what would happen if' simulator where a user changes one virtual parameter, like run speed, and sees a predicted synthetic failure point shift."
+    ],
+    "cardHook": "Keep a virtual copy of a machine in sync with its real twin, in both directions."
+  },
+  {
+    "id": "human-body-digital-twin-master-plan",
+    "title": "Human Body Digital Twin: A Master Plan",
+    "year": 2023,
+    "authors": "Chenyu Tang, Shuo Gao, and Luigi G. Occhipinti",
+    "tags": [
+      "Medicine & human health",
+      "Bioengineering",
+      "Computer science, AI & graphics"
+    ],
+    "discipline": "Medicine & human health",
+    "origin": "University of Cambridge; posted on arXiv, later published as a Perspective in Nature Reviews Electrical Engineering",
+    "stanford": false,
+    "insight": "The paper proposes a five-level roadmap for building a digital twin of an individual human body, starting from wearable devices that continuously collect a person's own data, moving through data analysis, and ending with a model detailed enough to support personalized treatment decisions. It's a proposed roadmap for where the field could go, not a report of a working whole-body twin, and the authors flag cost, data security, and ethics as open problems at every level.",
+    "startSmall": "Pick one simple, continuously trackable signal, like a resting heart rate a user logs by hand or exports from a fitness app, and build a personal dashboard that flags a new reading only when it departs from that one person's own recent pattern, not a population average.",
+    "makeItYours": "What's a health signal you already track about yourself, and would a personalized baseline actually tell you something a generic healthy range wouldn't?",
+    "gist": "a personal data-driven model of one body, checked against its own normal, not a population average",
+    "link": "https://arxiv.org/abs/2307.09225",
+    "keywords": [
+      "digital twin",
+      "precision medicine",
+      "wearable devices",
+      "personalized health",
+      "bioengineering"
+    ],
+    "vibecodingIdeas": [
+      "Build a personal-baseline tracker where a user logs a simple daily metric and the tool flags the next entry only if it departs from that person's own rolling history, not a fixed 'normal' range.",
+      "Create a privacy-aware mockup of a health digital-twin profile, where a user can toggle which synthetic data sources, like sleep, steps, or heart rate, feed into a single summary view.",
+      "Build a 'what changed' timeline that lets a user annotate their own tracked data with life events, like travel or a new routine, next to the trend line."
+    ],
+    "cardHook": "Model one body against its own history, not a population average."
+  },
+  {
+    "id": "digital-twin-civil-infrastructure-framework",
+    "title": "A Framework for Digital Twin of Civil Infrastructure: Challenges & Opportunities",
+    "year": 2019,
+    "authors": "Kamyab Zandi, Elliot Harris Ransom, Tanay Topac, Ruiqi Chen, Surendra Beniwal, Mattias Blomfors, Jiangpeng Shu, and Fu-Kuo Chang",
+    "tags": [
+      "Civil engineering, architecture & cities",
+      "Mechanical engineering & robotics"
+    ],
+    "discipline": "Civil engineering, architecture & cities",
+    "origin": "Stanford Structures and Composites Laboratory; presented at Structural Health Monitoring 2019 (IWSHM)",
+    "stanford": true,
+    "insight": "The paper proposes a three-part framework for a digital twin of a bridge or building: drone-based inspection to collect images, a data-driven step that estimates damage like cracking from those images, and a structural simulation that uses the estimated damage to predict how the structure will perform going forward. It's a proposed pipeline tested as a demonstration, not a finished tool deployed across a fleet of real bridges.",
+    "startSmall": "Start with a handful of sample photos of a cracked surface, like a sidewalk or a wall, and build a tool that lets a user trace the cracks by hand, measure their length from the image scale, and watch a simple estimated-severity score update.",
+    "gist": "piecing together drone photos, damage estimates, and a structural model into one picture of a bridge's health",
+    "link": "https://www.dpi-proceedings.com/index.php/shm2019/article/view/32288",
+    "researchers": [
+      {
+        "name": "Fu-Kuo Chang",
+        "institution": "Stanford",
+        "url": "https://sacl.stanford.edu/shm-and-digital-twin-civil-infrastructure",
+        "why": "Directs Stanford's Structures and Composites Laboratory, where this digital twin framework for civil infrastructure originated."
+      }
+    ],
+    "keywords": [
+      "digital twin",
+      "structural health monitoring",
+      "civil infrastructure",
+      "drone inspection",
+      "predictive maintenance"
+    ],
+    "vibecodingIdeas": [
+      "Build a drone-photo annotation tool where a user marks visible cracks on a set of sample images, and the tool tracks how a simulated damage score changes as more photos are added over fake time.",
+      "Create a bridge-health dashboard that combines a few synthetic sensor feeds, like vibration or tilt, with photo-based crack annotations into a single status view.",
+      "Build a before/after comparison slider for two photos of the same sample structure taken at different times, with a simple tool to highlight what changed."
+    ],
+    "cardHook": "Turn drone photos and a structural model into one picture of a bridge's health."
   }
 ];
 
@@ -4669,6 +4800,18 @@ textarea.copy-manual-text:focus-visible { outline: 2px solid var(--focus); outli
   var searchClear = document.getElementById("search-clear");
   var searchForm = document.getElementById("search-form");
 
+  function clearSearchQuery() {
+    state.query = "";
+    searchInput.value = "";
+    searchClear.classList.remove("visible");
+    if (state.exploreMode === "search") {
+      if (state.disciplines.length === 0 && !state.stanfordOnly) { goBack(); }
+      else { state.resultsSource = { type: "filter" }; render(); }
+    } else {
+      render();
+    }
+  }
+
   searchInput.addEventListener("input", function (e) {
     searchClear.classList.toggle("visible", e.target.value.length > 0);
   });
@@ -4677,24 +4820,19 @@ textarea.copy-manual-text:focus-visible { outline: 2px solid var(--focus); outli
     var term = searchInput.value.trim();
     if (!term) {
       if (state.exploreMode === "search" && state.resultsSource && state.resultsSource.type === "search") {
-        state.query = "";
-        state.resultsSource = { type: "filter" };
-        render();
+        clearSearchQuery();
       }
       return;
     }
     recordSearch(term);
-    state.query = term;
     openResults({ type: "search", query: term });
-  });
-  searchClear.addEventListener("click", function () {
+    // Results now appear as a results list, with the query shown as a removable
+    // filter chip instead, so the field itself resets to its placeholder.
     searchInput.value = "";
     searchClear.classList.remove("visible");
-    state.query = "";
-    if (state.exploreMode === "search") {
-      if (state.disciplines.length === 0 && !state.stanfordOnly) { goBack(); }
-      else { state.resultsSource = { type: "filter" }; render(); }
-    }
+  });
+  searchClear.addEventListener("click", function () {
+    clearSearchQuery();
     searchInput.focus();
   });
 
@@ -4960,9 +5098,25 @@ textarea.copy-manual-text:focus-visible { outline: 2px solid var(--focus); outli
   function updateActiveFilters() {
     var wrap = document.getElementById("active-filters");
     wrap.innerHTML = "";
-    var hasAny = state.disciplines.length > 0 || state.stanfordOnly;
+    var query = state.query.trim();
+    var hasAny = query.length > 0 || state.disciplines.length > 0 || state.stanfordOnly;
     wrap.hidden = !hasAny;
     if (!hasAny) return;
+
+    if (query) {
+      var qChip = document.createElement("span");
+      qChip.className = "chip";
+      var qText = document.createElement("span");
+      qText.textContent = query;
+      var qBtn = document.createElement("button");
+      qBtn.type = "button";
+      qBtn.setAttribute("aria-label", "Remove search: " + query);
+      qBtn.textContent = "×";
+      qBtn.addEventListener("click", function () { clearSearchQuery(); });
+      qChip.appendChild(qText);
+      qChip.appendChild(qBtn);
+      wrap.appendChild(qChip);
+    }
 
     state.disciplines.forEach(function (d) {
       var chip = document.createElement("span");
@@ -4987,10 +5141,10 @@ textarea.copy-manual-text:focus-visible { outline: 2px solid var(--focus); outli
       var sChip = document.createElement("span");
       sChip.className = "chip";
       var sText = document.createElement("span");
-      sText.textContent = "Stanford-linked only";
+      sText.textContent = "Stanford-affiliated research";
       var sBtn = document.createElement("button");
       sBtn.type = "button";
-      sBtn.setAttribute("aria-label", "Remove filter: Stanford-linked only");
+      sBtn.setAttribute("aria-label", "Remove filter: Stanford-affiliated research");
       sBtn.textContent = "×";
       sBtn.addEventListener("click", function () {
         state.stanfordOnly = false;
@@ -5010,7 +5164,12 @@ textarea.copy-manual-text:focus-visible { outline: 2px solid var(--focus); outli
       state.disciplines = [];
       state.stanfordOnly = false;
       stanfordCheckbox.checked = false;
-      render();
+      var hadQuery = state.query.trim().length > 0;
+      state.query = "";
+      searchInput.value = "";
+      searchClear.classList.remove("visible");
+      if (hadQuery && state.exploreMode === "search") { goBack(); }
+      else { render(); }
     });
     wrap.appendChild(clearAll);
   }
